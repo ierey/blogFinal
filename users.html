@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %}Users - Flask Blog{% endblock %}
+
+{% block content %}
+<h1>All Users</h1>
+
+<div class="card">
+    {% for user in users %}
+    <div style="padding: 15px; border-bottom: 1px solid #ecf0f1;">
+        <h3><a href="{{ url_for('user_profile', user_id=user.id) }}" style="color: #2c3e50;">{{ user.username }}</a></h3>
+        <p style="color: #7f8c8d;">{{ user.posts|length }} posts, {{ user.comments|length }} comments</p>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

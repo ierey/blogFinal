@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block title %}New Post - Flask Blog{% endblock %}
+
+{% block content %}
+<div class="card">
+    <h1>Create New Post</h1>
+    <form method="POST" style="margin-top: 30px;">
+        <div class="form-group">
+            <label for="title">Title</label>
+            <input type="text" id="title" name="title" required>
+        </div>
+        <div class="form-group">
+            <label for="content">Content</label>
+            <textarea id="content" name="content" required></textarea>
+        </div>
+        <button type="submit" class="btn">Publish Post</button>
+        <a href="{{ url_for('posts') }}" class="btn btn-secondary" style="margin-left: 10px;">Cancel</a>
+    </form>
+</div>
+{% endblock %}
